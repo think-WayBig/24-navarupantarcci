@@ -617,11 +617,128 @@
 							<h1 class="title text-center">News &amp; Events</h1>
 							<div class="separator"></div>
 
-							
+							<style>
+								.image-gallery {
+									display: flex;
+									flex-wrap: wrap;
+									justify-content: center;
+									gap: 10px;
+								}
+
+								.image-item img {
+									width: 100%;
+									border-radius: 5px;
+									max-width: 400px;
+									cursor: pointer;
+									transition: 0.25s;
+								}
+
+								.image-item img:hover {
+									transform: scale(0.97);
+								}
+
+								.modal1 {
+									visibility: hidden;
+									opacity: 0;
+									transition: opacity 0.25s linear;
+									position: fixed;
+									z-index: 99999;
+									padding-top: 100px;
+									left: 0;
+									top: 0;
+									width: 100%;
+									height: 100%;
+									overflow: auto;
+									background-color: rgba(0, 0, 0, 0.9);
+									-webkit-backdrop-filter: blur(7px);
+									backdrop-filter: blur(7px);
+								}
+
+								.modal-content {
+									margin: auto;
+									display: block;
+									width: 80%;
+									max-width: 700px;
+									border-radius: 5px;
+								}
+
+								.close {
+									display: flex;
+									align-items: center;
+									justify-content: center;
+									position: absolute;
+									padding: 0px 0px 6px 0px;
+									top: 35px;
+									right: 35px;
+									width: 40px;
+									height: 40px;
+									border-radius: 50%;
+									color: #f1f1f1;
+									font-size: 40px;
+									font-weight: bold;
+									border: none;
+									cursor: pointer;
+									transition: transform 0.3s;
+								}
+
+								button {
+									background: none;
+									border: none;
+								}
+
+								.close:hover {
+									transform: scale(0.9);
+								}
+
+								#caption {
+									margin: auto;
+									display: block;
+									width: 80%;
+									max-width: 700px;
+									white-space: pre-line;
+									text-align: center;
+									color: #ccc;
+									padding: 25px 0px 42px 0px;
+									height: 150px;
+									opacity: 0;
+									visibility: hidden;
+									transition: opacity 0.25s ease, visibility 0.25s;
+								}
+							</style>
+
+							<div class="image-gallery">
+								<div class="image-item">
+									<img src="./images/g1.jpg" alt=""
+										data-full="./images/g1.jpg">
+								</div>
+								<div class="image-item">
+									<img src="./images/g2.jpg" alt=""
+										data-full="./images/g2.jpg">
+								</div>
+								<div class="image-item">
+									<img src="./images/g3.jpg" alt=""
+										data-full="./images/g3.jpg">
+								</div>
+								<div class="image-item">
+									<img src="./images/g4.jpg" alt=""
+										data-full="./images/g4.jpg">
+								</div>
+								<div class="image-item">
+									<img src="./images/g5.jpg" alt=""
+										data-full="./images/g5.jpg">
+								</div>
+								<!-- Repeat -->
+							</div>
+							<!-- Modal Structure -->
+							<div id="imageModal" class="modal1" role="dialog" aria-label="Image View Modal">
+								<button class="close" aria-label="Close" tabindex="0">&times;</button>
+								<img class="modal-content" id="fullImage">
+								<div id="caption" aria-live="polite"></div>
+							</div>
 
 						</div><!--col 12 ends-->
 
-						<a class="btn btn-default more" href="news.php">Click More</a>
+						<a class="btn btn-default more" href="./news/">Click More</a>
 					</div>
 				</div>
 			</div>
@@ -649,7 +766,7 @@
 				</div>
 
 			</div>
-			<!-- section end -->
+			section end -->
 
 
 
@@ -826,6 +943,72 @@
 	<!-- Jquery and Bootstap core js files -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<script>
+		const modal = document.getElementById("imageModal");
+		const modalImg = document.getElementById("fullImage");
+		const captionText = document.getElementById("caption");
+		const imageGallery = document.querySelector(".image-gallery");
+
+		imageGallery.addEventListener("click", function (event) {
+			const target = event.target;
+			if (target.tagName === "IMG" && target.closest(".image-item")) {
+				showModal(target);
+			}
+		});
+
+		function showModal(img) {
+			modal.style.visibility = "visible";
+			modal.scrollTop = 0;
+			requestAnimationFrame(() => {
+				modal.style.opacity = "1";
+			});
+
+			modalImg.src = img.dataset.full;
+			captionText.style.opacity = "0";
+			captionText.style.visibility = "visible";
+			setTimeout(() => {
+				captionText.innerHTML = img.alt;
+				captionText.style.opacity = "1";
+			}, 1000);
+
+			document.addEventListener("keydown", handleEscape, false);
+		}
+
+		function handleEscape(event) {
+			if (event.key === "Escape" || event.key === "Esc") {
+				closeModal();
+			}
+		}
+
+		const span = document.querySelector(".close");
+
+		span.addEventListener("click", closeModal);
+		modal.addEventListener("click", function (event) {
+			if (event.target === modal) {
+				closeModal();
+			}
+		});
+
+		function closeModal() {
+			modal.style.opacity = "0";
+			modal.addEventListener(
+				"transitionend",
+				() => {
+					modal.style.visibility = "hidden";
+					captionText.style.visibility = "hidden";
+					captionText.style.opacity = "0";
+					captionText.innerHTML = "";
+				},
+				{
+					once: true
+				}
+			);
+
+			document.removeEventListener("keydown", handleEscape, false);
+		}
+
+	</script>
 
 	<!-- Modernizr javascript -->
 	<script type="text/javascript" src="js/modernizr.js"></script>
