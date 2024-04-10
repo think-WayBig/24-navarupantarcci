@@ -266,20 +266,6 @@
 		</header>
 		<!-- header end --> <!-- HEADER ENDS HERE -->
 
-		<!-- banner start 
-			<!-- ================ 
-			<div class="banner">
-				<div class="fixed-image section dark-translucent-bg" style="background-image:url('images/onepage-slider-slide-1.jpg');">
-					<div class="container">
-					<div class="space-top"></div>
-					<h1>asdf</h1>
-					<div class="separator-2"></div>
-					<p class="lead">test message</p>
-					</div>
-				</div>
-			</div>
-			<!-- banner end -->
-
 		<!-- page-intro start-->
 		<!-- ================ -->
 		<div class="page-intro">
@@ -288,13 +274,42 @@
 					<div class="col-md-12">
 						<ol class="breadcrumb">
 							<li><i class="fa fa-home pr-10"></i><a href="index.html">Home</a></li>
-							<li class="active">News Board</li>
+							<li class="active">Video Gallery</li>
 						</ol>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- page-intro end -->
+
+		<style>
+			.main section {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+			}
+
+			.video-container {
+				height: auto;
+				padding: 10px;
+				background: white;
+				width: 40%;
+			}
+
+			.responsive-video {
+				position: relative;
+				display: block;
+				width: 100%;
+				padding-bottom: 56.25%;
+			}
+
+			.responsive-video iframe,
+			.responsive-video video {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
 
 		<!-- main-container start -->
 		<!-- ================ -->
@@ -305,154 +320,56 @@
 					<!-- main start -->
 					<!-- ================ -->
 					<div class="main col-md-12">
-
 						<!-- page-title start -->
 						<!-- ================ -->
-						<h1 class="page-title">News Board</h1>
+						<h1 class="page-title">Video Gallery</h1>
 						<div class="separator-2"></div>
 						<!-- page-title end -->
 
-						<style>
-							.album .responsive-container-block {
-								min-height: 75px;
-								height: fit-content;
-								width: 100%;
-								padding-top: 10px;
-								padding-right: 10px;
-								padding-bottom: 10px;
-								padding-left: 10px;
-								display: flex;
-								flex-wrap: wrap;
-								margin-top: 0px;
-								margin-right: auto;
-								margin-bottom: 0px;
-								margin-left: auto;
-								justify-content: flex-start;
-							}
-
-							.album .responsive-container-block.bg {
-								max-width: 1320px;
-								margin: 0 0 0 0;
-								justify-content: space-between;
-							}
-
-							.album .img {
-								width: 100%;
-								margin: 0 0 20px 0;
-							}
-
-							.album #i9rb {
-								color: black;
-							}
-
-							.album #ir6i {
-								color: black;
-							}
-
-							.album #ikz3b {
-								color: black;
-							}
-
-							.album .responsive-container-block.img-cont {
-								flex-direction: column;
-								max-width: 33.3%;
-								min-height: auto;
-								margin: 0 0 0 0;
-								height: 100%;
-							}
-
-							.album #ipix {
-								color: black;
-							}
-
-							.album #ipzoh {
-								color: black;
-							}
-
-							.album #ig5q8 {
-								color: black;
-							}
-
-							.album #imtzl {
-								color: black;
-							}
-
-							.album #i53es {
-								color: black;
-							}
-
-							.album .img.img-big {
-								height: 50%;
-								margin: 0 0 16px 0;
-							}
-
-							@media (max-width: 1024px) {
-								.album .img {
-									margin: 0 0 18px 0;
-								}
-							}
-
-							@media (max-width: 768px) {
-								.album .img {
-									max-width: 32.5%;
-									margin: 0 0 0 0;
-								}
-
-								.album .responsive-container-block.bg {
-									flex-direction: column;
-								}
-
-								.album .responsive-container-block.img-cont {
-									max-width: 100%;
-									flex-direction: row;
-									justify-content: space-between;
-								}
-
-								.album .img.img-big {
-									max-width: 49%;
-									margin: 0 0 0 0;
-								}
-							}
-
-							@media (max-width: 500px) {
-								.album .img {
-									max-width: 94%;
-									margin: 0 0 25px 0;
-								}
-
-								.album .responsive-container-block.img-cont {
-									flex-direction: column;
-									align-items: center;
-									padding: 10px 10px 10px 10px;
-								}
-
-								.album .img.img-big {
-									max-width: 94%;
-									margin: 0 0 25px 0;
-								}
-
-								.album .img.img-last {
-									margin: 0 0 5px 0;
-								}
-							}
-						</style>
-
-						<div class="album">
-							<div class="responsive-container-block bg">
-								<div class="responsive-container-block img-cont">
-									<img class="img" src="../images/g1.jpg">
-									<!-- <img class="img" src="../images/g2.jpg"> -->
-								</div>
-								<div class="responsive-container-block img-cont">
-									<img class="img img-big" src="../images/g4.jpg">
-									<img class="img img-big img-last" src="../images/g5.jpg">
-								</div>
-								<div class="responsive-container-block img-cont">
-									<img class="img" src="../images/g3.jpg">
-									<img class="img" src="../images/g2.jpg">
+						<section>
+							<div class="video-container">
+								<div class="responsive-video">
+									<iframe src="https://www.youtube.com/embed/_wd2QWiweBg?si=oAn3brM-aSxSeav_"
+										width="600" height="338" frameborder="0" webkitAllowFullScreen
+										mozallowfullscreen allowFullScreen></iframe>
 								</div>
 							</div>
-						</div>
+							<div class="video-container">
+								<div class="responsive-video">
+									<iframe src="https://www.youtube.com/embed/59NNI2uC2lg?si=2p7ZACDFNQXzLvxm"
+										width="600" height="338" frameborder="0" webkitAllowFullScreen
+										mozallowfullscreen allowFullScreen></iframe>
+								</div>
+							</div>
+							<div class="video-container">
+								<div class="responsive-video">
+									<iframe src="https://www.youtube.com/embed/nxp69PGIkHM?si=DnSH1rwcTe0j4eCu"
+										width="600" height="338" frameborder="0" webkitAllowFullScreen
+										mozallowfullscreen allowFullScreen></iframe>
+								</div>
+							</div>
+							<div class="video-container">
+								<div class="responsive-video">
+									<iframe src="https://www.youtube.com/embed/TAlwcwc5M0o?si=UeEdLJTAwiFixiTz"
+										width="600" height="338" frameborder="0" webkitAllowFullScreen
+										mozallowfullscreen allowFullScreen></iframe>
+								</div>
+							</div>
+							<div class="video-container">
+								<div class="responsive-video">
+									<iframe src="https://www.youtube.com/embed/d7SlkpL66QE?si=ZeZiLb85MsKhgM7h"
+										width="600" height="338" frameborder="0" webkitAllowFullScreen
+										mozallowfullscreen allowFullScreen></iframe>
+								</div>
+							</div>
+							<div class="video-container">
+								<div class="responsive-video">
+									<iframe src="https://www.youtube.com/embed/PDrs0TIfdnc?si=P5cXhfG23WDPWJZ-"
+										width="600" height="338" frameborder="0" webkitAllowFullScreen
+										mozallowfullscreen allowFullScreen></iframe>
+								</div>
+							</div>
+						</section>
 
 					</div>
 					<!-- main end -->
