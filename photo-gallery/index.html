@@ -187,7 +187,8 @@
 														data-toggle="dropdown">About
 														Us</a>
 													<ul class="dropdown-menu">
-														<li><a href="../navarupantar-activity-report.pdf">Activity Report</a></li>
+														<li><a href="../navarupantar-activity-report.pdf">Activity
+																Report</a></li>
 														<li><a href="../about-fiss/">About FISS</a></li>
 														<li><a href="../about-home/">About Navarupantar</a></li>
 														<li><a href="../mission/">Vision &amp; Mission</a></li>
@@ -283,88 +284,419 @@
 		</div>
 		<!-- page-intro end -->
 
+		<!-- Lightbox2 CSS -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+		<!-- Lightbox2 JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+
 		<style>
 			.main-container .row {
-				display: flex;
-				flex-wrap: wrap;
-				padding: 0 4px;
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				/* Four columns in a row */
+				gap: 8px;
+				/* Space between images */
 			}
 
-			/* Create four equal columns that sits next to each other */
-			.main-container .column {
-				flex: 25%;
-				max-width: 25%;
-				padding: 0 4px;
+			.main-container .row::before {
+				content: none;
+				/* Remove default Bootstrap :before pseudo-element content */
 			}
 
-			.main-container .column img {
-				margin-top: 8px;
-				vertical-align: middle;
+			.main-container .row a {
+				display: block;
+				/* Make anchor tags behave like block elements */
+				overflow: hidden;
+				/* Prevent image overflow */
+				position: relative;
+				/* Allow positioning of pseudo-elements */
+			}
+
+			.main-container .row img {
 				width: 100%;
+				/* Make images fill the container */
+				height: 100%;
+				/* Ensure images fill the container */
+				object-fit: cover;
+				/* Crop overflow and maintain aspect ratio */
+				display: block;
+				position: absolute;
+				/* Position image within the container */
+				top: 0;
+				left: 0;
 			}
 
-			/* Responsive layout - makes a two column-layout instead of four columns */
-			@media screen and (max-width: 800px) {
-				.main-container .column {
-					flex: 50%;
-					max-width: 50%;
-				}
+			/* Set a fixed height for the image containers to ensure consistent dimensions */
+			.main-container .row a {
+				height: 200px;
+				/* Adjust the height as needed */
 			}
 
-			/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+			/* Responsive layout - stack images in a single column on smaller screens */
 			@media screen and (max-width: 600px) {
-				.main-container .column {
-					flex: 100%;
-					max-width: 100%;
+				.main-container .row {
+					grid-template-columns: 1fr;
+					/* Single column layout */
 				}
 			}
 		</style>
+
 
 		<!-- main-container start -->
 		<!-- ================ -->
 		<section class="main-container">
 			<div class="container">
-				<div class="row">
+				<div class="main col-md-12">
+					<h1 class="page-title">Health Check-up Camp</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/med-camp/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/med-camp/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/med-camp/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/med-camp/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/med-camp/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/med-camp/3.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
 
-					<!-- main start -->
-					<!-- ================ -->
-					<div class="main col-md-12">
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Sports and Games Activities</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/sports-and-games/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/sports-and-games/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/sports-and-games/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/sports-and-games/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/sports-and-games/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/sports-and-games/3.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
 
-						<!-- page-title start -->
-						<!-- ================ -->
-						<h1 class="page-title">Photo Gallery</h1>
-						<div class="separator-2"></div>
-						<!-- page-title end -->
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Inauguration Day</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/inaugration/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/inaugration/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/inaugration/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/inaugration/2.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
 
-						<div class="row">
-							<div class="column">
-								<img src="./images/g1.jpg">
-								<img src="./images/g3.jpg">
-								<img src="./images/g12.jpg">
-								<img src="./images/g10.jpg">
-							</div>
-							<div class="column">
-								<img src="./images/g11.jpg">
-								<img src="./images/g8.jpg">
-								<img src="./images/g9.jpg">
-							</div>
-							<div class="column">
-								<img src="./images/g4.jpg">
-								<img src="./images/g6.jpg">
-								<img src="./images/g7.jpg">
-							</div>
-							<div class="column">
-								<img src="./images/g5.jpg">
-								<img src="./images/g2.jpg">
-							</div>
-						</div>
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Veer Baal Diwas</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/veer-baal-diwaas/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/veer-baal-diwaas/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/veer-baal-diwaas/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/veer-baal-diwaas/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/veer-baal-diwaas/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/veer-baal-diwaas/3.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/veer-baal-diwaas/4.jpg" data-lightbox="gallery"><img
+								src="./images/Events/veer-baal-diwaas/4.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Establishment Day</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/establishment-day/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/establishment-day/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/establishment-day/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/establishment-day/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/establishment-day/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/establishment-day/3.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Art and Craft</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/art-and-craft/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/art-and-craft/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/art-and-craft/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/art-and-craft/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/art-and-craft/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/art-and-craft/3.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/art-and-craft/4.jpg" data-lightbox="gallery"><img
+								src="./images/Events/art-and-craft/4.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/art-and-craft/5.jpg" data-lightbox="gallery"><img
+								src="./images/Events/art-and-craft/5.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/art-and-craft/6.jpg" data-lightbox="gallery"><img
+								src="./images/Events/art-and-craft/6.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/art-and-craft/7.jpg" data-lightbox="gallery"><img
+								src="./images/Events/art-and-craft/7.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/art-and-craft/8.jpg" data-lightbox="gallery"><img
+								src="./images/Events/art-and-craft/8.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/art-and-craft/9.jpg" data-lightbox="gallery"><img
+								src="./images/Events/art-and-craft/9.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/art-and-craft/10.jpg" data-lightbox="gallery"><img
+								src="./images/Events/art-and-craft/10.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/art-and-craft/11.jpg" data-lightbox="gallery"><img
+								src="./images/Events/art-and-craft/11.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/art-and-craft/12.jpg" data-lightbox="gallery"><img
+								src="./images/Events/art-and-craft/12.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Physiotherapy</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/physiotherapy/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/physiotherapy/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/physiotherapy/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/physiotherapy/2.jpg" alt="Gallery Image 1"></a>
 
 					</div>
-					<!-- main end -->
-
 				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Psychological Counselling</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/Psychological Counselling/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Psychological Counselling/1.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Bamboo Craft Training</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/Bamboo Craft Training/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Bamboo Craft Training/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Bamboo Craft Training/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Bamboo Craft Training/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Bamboo Craft Training/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Bamboo Craft Training/3.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Educational Activity</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/Educational Activity/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Educational Activity/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Educational Activity/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Educational Activity/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Educational Activity/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Educational Activity/3.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Educational Activity/4.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Educational Activity/4.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Educational Activity/5.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Educational Activity/5.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Educational Activity/6.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Educational Activity/6.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Gardening</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/gardening/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/gardening/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/gardening/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/gardening/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/gardening/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/gardening/3.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Gandhi Jayanti</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/Gandhi Jayanti/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Gandhi Jayanti/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Gandhi Jayanti/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Gandhi Jayanti/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Gandhi Jayanti/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Gandhi Jayanti/3.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Gandhi Jayanti/4.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Gandhi Jayanti/4.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Swachhata Pakhwada Programme</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/Swachhata  Pakhwada Programme/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Swachhata  Pakhwada Programme/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Swachhata  Pakhwada Programme/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Swachhata  Pakhwada Programme/2.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Swachhata Hi Seva Programme</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/Swachhata Hi Seva Programme/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Swachhata Hi Seva Programme/1.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">World Environment Day</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/world-environment-day/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/world-environment-day/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/world-environment-day/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/world-environment-day/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/world-environment-day/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/world-environment-day/3.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Festivals Celebration</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/festivals-celebration/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/festivals-celebration/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/festivals-celebration/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/festivals-celebration/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/festivals-celebration/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/festivals-celebration/3.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/festivals-celebration/4.jpg" data-lightbox="gallery"><img
+								src="./images/Events/festivals-celebration/4.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/festivals-celebration/5.jpg" data-lightbox="gallery"><img
+								src="./images/Events/festivals-celebration/5.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">International Yoga Day</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/International Yoga Day/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/International Yoga Day/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/International Yoga Day/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/International Yoga Day/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/International Yoga Day/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/International Yoga Day/3.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Children’s Day</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/Children Day/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Children Day/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Children Day/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Children Day/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Children Day/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Children Day/3.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Children Day/4.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Children Day/4.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Children Day/5.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Children Day/5.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Children Day/6.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Children Day/6.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Children Day/7.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Children Day/7.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Children Day/8.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Children Day/8.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Republic Day</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/Republic day/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Republic day/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Republic day/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Republic day/2.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Independence Day</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/independence-day/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/independence-day/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/independence-day/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/independence-day/2.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Art Competition</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/Art Competition/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Art Competition/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Art Competition/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Art Competition/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Art Competition/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Art Competition/3.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Art Competition/4.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Art Competition/4.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Art Competition/5.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Art Competition/5.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Exposure Visit</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/exposer-visit/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/exposer-visit/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/exposer-visit/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/exposer-visit/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/exposer-visit/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/exposer-visit/3.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/exposer-visit/4.jpg" data-lightbox="gallery"><img
+								src="./images/Events/exposer-visit/4.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/exposer-visit/5.jpg" data-lightbox="gallery"><img
+								src="./images/Events/exposer-visit/5.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Birthday Celebration</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/Birthday celebration/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Birthday celebration/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Birthday celebration/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Birthday celebration/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/Birthday celebration/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/Birthday celebration/3.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
+				<div style="margin-top: 50px;" class="main col-md-12">
+					<h1 class="page-title">Home Management Meeting</h1>
+					<div class="separator-2"></div>
+					<div class="row">
+						<a href="./images/Events/home-management-meeting/1.jpg" data-lightbox="gallery"><img
+								src="./images/Events/home-management-meeting/1.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/home-management-meeting/2.jpg" data-lightbox="gallery"><img
+								src="./images/Events/home-management-meeting/2.jpg" alt="Gallery Image 1"></a>
+						<a href="./images/Events/home-management-meeting/3.jpg" data-lightbox="gallery"><img
+								src="./images/Events/home-management-meeting/3.jpg" alt="Gallery Image 1"></a>
+					</div>
+				</div>
+
 			</div>
 		</section>
+
+
 		<!-- main-container end -->
 
 
